@@ -3,8 +3,8 @@ import requests
 import streamlit as st
 from PIL import Image
 
-# API URL
-api_url = "http://localhost:1001/predict"
+# API URL - Must use the same port (5330) as the FastAPI service
+api_url = "http://localhost:5330/predict"
 
 st.title("Satellite Image Classification")
 
