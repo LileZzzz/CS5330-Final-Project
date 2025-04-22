@@ -52,13 +52,14 @@ if uploaded_file is not None:
                 st.write("Status code:", response.status_code)
 
                 response.raise_for_status()
-
+                # Get the JSON response
                 predictions = response.json()["predictions"]
 
                 st.subheader("Classification Results:")
                 for pred in predictions:
                     st.write(f"{pred['class']}: {pred['probability']}")
 
+            # Handle errors
             except requests.exceptions.HTTPError as e:
                 st.error(f"API Error: {str(e)}")
                 st.write("Response content:", response.text)
